@@ -136,12 +136,18 @@ view model =
             , style "background-color" "#DCDCDC"
             ]
             [ div []
-                [ input [ type_ "radio", checked <| boxSizingValue == "border-box", value "border-box", onInput UpdateBoxSizing ] []
-                , label [ name "box-sizing" ] [ text "border-box" ]
-                , input [ type_ "radio", checked <| boxSizingValue == "content-box", style "margin-left" "15px", value "content-box", onInput UpdateBoxSizing ] []
-                , label [ name "box-sizing" ] [ text "content-box" ]
-                , input [ type_ "radio", checked <| boxSizingValue == "inherit", style "margin-left" "15px", value "inherit", onInput UpdateBoxSizing ] []
-                , label [ name "box-sizing" ] [ text "inherit" ]
+                [ label [ name "box-sizing" ]
+                    [ input [ type_ "radio", checked <| boxSizingValue == "border-box", value "border-box", onInput UpdateBoxSizing ] []
+                    , text "border-box"
+                    ]
+                , label [ name "box-sizing" ]
+                    [ input [ type_ "radio", checked <| boxSizingValue == "content-box", style "margin-left" "15px", value "content-box", onInput UpdateBoxSizing ] []
+                    , text "content-box"
+                    ]
+                , label [ name "box-sizing" ]
+                    [ input [ type_ "radio", checked <| boxSizingValue == "inherit", style "margin-left" "15px", value "inherit", onInput UpdateBoxSizing ] []
+                    , text "inherit"
+                    ]
                 ]
             , div [ class "color-pallet" ]
                 [ sliderView
